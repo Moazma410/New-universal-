@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Universal solar and traders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<style>
+    .brand-text {
+    font-size: 25px;
+    font-weight: 700;
+    color: #f97316; /* orange */
+    letter-spacing: 1px;
+    white-space: nowrap;
+
+    animation: brandMove 4s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+/* left-right smooth movement */
+@keyframes brandMove {
+    0% {
+        transform: translateX(-20px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+/* soft orange glow effect */
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(249,115,22,0.4);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(249,115,22,0.9);
+    }
+}
+</style>
+
+<body class="overflow-x-hidden">
+    <header  >
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-18 " > <!-- Logo -->
+               <img class="h-[80px] w-[80px]"  src="logo.png">  <!-- Desktop Menu -->
+               <div class="brand-text xs:text-[10px]">
+NUST
+</div>
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="All pro.html"  target="blank"  class="hover:text-blue-600  ">All Products</a>
+                    <a href="services.html"   target="blank"  class="hover:text-blue-600 blank ">Services</a>
+                    <a href="solar cal.html"   target="blank"  class="hover:text-blue-600">Solar System Calculator</a>
+                    <a href="contact.html"  target="blank"   class="hover:text-blue-600">Contact</a>
+                    <a href="home.html" target="blank" class="hover:text-blue-600 ">About Us</a>
+                    <a href="NEWI.html"  target="blank"   class="hover:text-blue-600">New Invention</a>
+                </div>
+  <!-- Mobile Hamburger -->
+                <button id="menuBtn" class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         class="w-8 h-8"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                              
+                    </svg>
+                </button>
+   </div>
+        </div>
+    </nav>
+
+    <!-- Overlay --> 
+    <div id="overlay"
+         class="fixed inset-0 bg-black/50 hidden z-40">
+    </div>
+
+    <!-- Mobile Offcanvas -->
+    <div id="sidebar"
+         class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50 lg:hidden">
+
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="font-semibold text-lg">Menu</h2>
+
+            <button id="closeBtn" class="text-2xl"> 
+                &times;
+            </button>
+        </div>
+
+        <div class="flex flex-col p-4 space-y-4">
+           <a href="All pro.html"  target="blank"  class="hover:text-blue-600  ">All Products</a>
+                    <a href="services.html"   target="blank"  class="hover:text-blue-600 blank ">Services</a>
+                    <a href="solar cal.html"   target="blank"  class="hover:text-blue-600">Solar System Calculator</a>
+                    <a href="contact.html"  target="blank"   class="hover:text-blue-600">Contact</a>
+                    <a href="home.html" target="blank" class="hover:text-blue-600 ">About Us</a>
+                    <a href="NEWI.html"  target="blank"   class="hover:text-blue-600">New Invention</a>
+                </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<div class="bg-[url('sl.jpg')] h-screen w-full bg-cover bg-center"> 
+    
+    <div class="bg-black/50 h-full w-full">
+
+      <div class="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+
+            <h1 class="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+                Solar Excellence You Can Trust
+            </h1>
+
+            <p class="text-white font-semibold mt-4 text-lg sm:text-xl md:text-2xl max-w-4xl">
+                Delivering Sustainable Power Solutions For A Brighter Tomorrow
+            </p>
+
+        </div>
+
+    </div>
+ </div>
+
+   <!-- <div class="text-4xl font-bold mx-auto justify-center "  style=" margin-left: 450px;">  NEW UNIVERSAL SOLAR AND TRADERS </div> -->
+
+
+
+<!-- Why Our Products Are Best -->
+<section class="py-36 px-4 text-center">
+
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold animate-pulse sm:mt-60px">
+        Why Our Products Are Best
+    </h2>
+
+</section>
+
+<!-- Solar Efficiency Carousel -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+
+    <div class="relative overflow-hidden rounded-2xl shadow-xl">
+
+        <!-- Slides -->
+        <div id="slider" class="flex transition-transform duration-700 ease-in-out">
+<!-- Slide 1 -->
+<div class="min-w-full relative">
+
+    <img src="im.webp"
+         class="w-full h-[320px] md:h-[520px] object-cover"
+         alt="Solar Panels">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-center">
+
+        <div class="px-6 md:px-10 max-w-2xl text-white">
+
+            <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+                Up to 22% Panel Efficiency
+            </h2>
+
+            <p class="mt-4 text-sm md:text-lg text-gray-200">
+                High-performance solar panels designed to maximize energy production even in low light conditions.
+            </p>
+
+           
+        </div>
+
+    </div>
+
+</div>
+
+            <!-- Slide 2 -->
+            <div class="min-w-full relative">
+                <img src="ii.png"
+                     class="w-full h-[300px] md:h-[520px] object-cover"
+                     alt="Hybrid Inverter">
+
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center text-center">
+                    <div class="px-6 md:px-16 text-white">
+                        <h2 class="text-3xl md:text-5xl font-bold">
+                            Smart Hybrid Inverters
+                        </h2>
+                        <p class="mt-4 text-sm md:text-lg">
+                            Advanced MPPT technology for maximum power extraction.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="min-w-full relative">
+                <img src="batt.jpeg"
+                     class="w-full h-[300px] md:h-[500px] object-cover"
+                     alt="Battery Storage">
+
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center">
+                    <div class="px-6 md:px-16 text-white">
+                        <h2 class="text-3xl md:text-5xl font-bold ">
+                            Long Lasting Battery Storage
+                        </h2>
+                        <p class="mt-4 text-sm md:text-lg">
+                            Reliable lithium batteries with extended lifecycle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="min-w-full relative">
+                <img src="ee.png"
+                     class="w-full h-[300px] md:h-[500px] object-cover"
+                     alt="Energy Savings">
+
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center">
+                    <div class="px-6 md:px-16 text-white">
+                        <h2 class="text-3xl md:text-5xl font-bold">
+                            Reduce Electricity Bills
+                        </h2>
+                        <p class="mt-4 text-sm md:text-lg">
+                            Save significantly with high-efficiency solar solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="min-w-full relative">
+                <img src="pi.jpeg"
+                     class="w-full h-[300px] md:h-[500px] object-cover"
+                     alt="Solar Installation">
+
+                <div class="absolute inset-0 bg-black/50 flex items-center justify-center text-center">
+                    <div class="px-6 md:px-16 text-white">
+                        <h2 class="text-3xl md:text-5xl font-bold">
+                            Professional Installation
+                        </h2>
+                        <p class="mt-4 text-sm md:text-lg">
+                            Expert installation and long-term support for every project.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Previous Button -->
+        <button id="prev"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 p-3 rounded-full">
+            ❮
+        </button>
+
+        <!-- Next Button -->
+        <button id="next"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 p-3 rounded-full">
+            ❯
+        </button>
+
+    </div>
+
+</section>
+
+<br>
+<br>
+<br>
+<br>
+
+ <section class="w-full py-16 px-5 bg-[#0B1220]">
+
+    <div class="max-w-6xl mx-auto">
+
+        <h1 class="text-white text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12">
+            <span class="md:border-b-4 md:border-orange-500 pb-2">
+                Frequently Asked Questions
+            </span>
+        </h1>
+
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-lg overflow-hidden mb-6">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    What solar systems do you provide?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                New Universal Solar and Traders offers on-grid, off-grid, and hybrid solar systems for homes, businesses, offices, and industrial projects. We provide complete installation with high-quality equipment.
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-lg overflow-hidden mb-6">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    How much can I save on my electricity bill?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                Depending on your electricity usage and the system size, you can reduce your electricity bill by up to 80% or even eliminate it completely with a properly designed solar solution.
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-lg overflow-hidden mb-6">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    Do you provide installation services?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                Yes. Our experienced technicians handle complete installation, testing, and system commissioning while following the highest safety and quality standards.
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-lg overflow-hidden mb-6">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    Which solar panel brands do you offer?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                We supply premium solar panels, inverters, batteries, and accessories from trusted brands to ensure maximum efficiency and long-term performance.
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white rounded-lg overflow-hidden mb-6">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    Do you offer maintenance after installation?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                Absolutely. We provide regular maintenance, system inspections, troubleshooting, and technical support to keep your solar system performing at its best.
+            </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="bg-white rounded-lg overflow-hidden">
+            <div class="QandA flex justify-between items-center p-5 cursor-pointer hover:bg-orange-500 hover:text-white duration-300">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-semibold">
+                    How can I get a free quotation?
+                </h2>
+                <span class="text-3xl font-bold">+</span>
+            </div>
+
+            <div class="text-gray-700 text-base sm:text-lg px-5 h-0 scale-0 duration-500 origin-top">
+                Contact New Universal Solar and Traders through our phone number, WhatsApp, or website. Our team will assess your energy needs and provide a free customized quotation without any obligation.
+            </div>
+        </div>
+
+    </div>
+
+</section>
+</body> 
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+            overlay.classList.remove('hidden');
+        });
+
+        function closeMenu() {
+            sidebar.classList.add('-translate-x-full');
+            overlay.classList.add('hidden');
+        }
+
+        closeBtn.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+
+
+
+const slider = document.getElementById("slider");
+const slides = document.querySelectorAll("#slider > div");
+
+let current = 0;
+
+function updateSlider() {
+    slider.style.transform = `translateX(-${current * 100}%)`;
+}
+
+document.getElementById("next").addEventListener("click", () => {
+    current = (current + 1) % slides.length;
+    updateSlider();
+});
+
+document.getElementById("prev").addEventListener("click", () => {
+    current = (current - 1 + slides.length) % slides.length;
+    updateSlider();
+});
+
+// Auto Slide
+setInterval(() => {
+    current = (current + 1) % slides.length;
+    updateSlider();
+}, 5000);
+
+
+
+ let x=document.querySelectorAll('.QandA');
+
+ x.forEach((v,index)=>{
+
+    v.addEventListener("click",()=>{
+  v.nextElementSibling.classList.toggle("p-[20px]");
+  
+   v.nextElementSibling.classList.toggle("scale-100");
+
+   v.nextElementSibling.classList.toggle("h-[auto]");} 
+  ) } ) 
+
+</script>
+```
+   
+
+
+
+
+</html>

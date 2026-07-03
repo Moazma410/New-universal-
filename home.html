@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heliast Solar — About Us</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-top: #16233F;
+    --sky-bottom: #1F2A44;
+    --sun-x: 12%;
+    --sun-y: 78%;
+    --sun-core: #10B981;
+    --sun-glow: #2563EB;
+    --coral: #EF4444;
+    --teal: #3B82F6;
+    --glass-fill: rgba(255,255,255,0.06);
+    --glass-fill-strong: rgba(255,255,255,0.10);
+    --glass-border: rgba(255,255,255,0.16);
+    --text-primary: #F7F5F0;
+    --text-muted: rgba(247,245,240,0.66);
+    --text-faint: rgba(247,245,240,0.42);
+    --radius: 20px;
+    --display: 'Space Grotesk', sans-serif;
+    --body-font: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+
+  *{margin:0; padding:0; box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family: var(--body-font);
+    color: var(--text-primary);
+    background: #16233F;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- Scroll-driven sky ---------- */
+  .sky{
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-bottom) 100%);
+    transition: background 0.05s linear;
+  }
+  .sky::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,.5) 0, transparent 100%),
+      radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,.35) 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 70% 15%, rgba(255,255,255,.4) 0, transparent 100%),
+      radial-gradient(1px 1px at 85% 45%, rgba(255,255,255,.3) 0, transparent 100%),
+      radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,.25) 0, transparent 100%),
+      radial-gradient(1.5px 1.5px at 92% 75%, rgba(255,255,255,.3) 0, transparent 100%);
+    opacity: .6;
+  }
+  .sun-orb{
+    position: fixed;
+    z-index: -1;
+    left: var(--sun-x);
+    top: var(--sun-y);
+    width: 140px; height: 140px;
+    margin-left: -70px; margin-top: -70px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--sun-core), var(--sun-glow) 55%, transparent 72%);
+    filter: blur(2px);
+    box-shadow: 0 0 90px 30px rgba(37,99,235,0.35), 0 0 200px 90px rgba(16,185,129,0.15);
+    pointer-events: none;
+    transition: left 0.05s linear, top 0.05s linear;
+  }
+
+  /* ---------- Glass utility ---------- */
+  .glass{
+    background: var(--glass-fill);
+    backdrop-filter: blur(18px) saturate(130%);
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  a{color:inherit; text-decoration:none;}
+  button{font-family:inherit; cursor:pointer;}
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sun-core);
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width: 24px; height: 1px;
+    background: var(--sun-core);
+    display:inline-block;
+  }
+
+  h1,h2,h3{ font-family: var(--display); font-weight: 600; letter-spacing: -0.01em; }
+
+  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+
+  :focus-visible{ outline: 2px solid var(--sun-core); outline-offset: 3px; }
+
+  /* ---------- Nav ---------- */
+  header{
+    position: sticky; top: 0; z-index: 50;
+    padding: 18px 0;
+  }
+  .nav-inner{
+    max-width: 1180px; margin: 0 auto; padding: 0 32px;
+  }
+  nav.glass{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 24px;
+    border-radius: 999px;
+  }
+  .logo{
+    display:flex; align-items:center; gap:10px;
+    font-family: var(--display); font-weight:700; font-size:1.05rem;
+    letter-spacing: -0.02em;
+  }
+  .logo-mark{
+    width:30px; height:30px; border-radius:50%;
+    background: radial-gradient(circle at 35% 30%, var(--sun-core), var(--sun-glow) 70%);
+    box-shadow: 0 0 16px rgba(37,99,235,0.6);
+    flex-shrink:0;
+  }
+  .nav-links{ display:flex; gap:32px; font-size:0.92rem; color: var(--text-muted); }
+  .nav-links a:hover{ color: var(--text-primary); }
+  .nav-cta{
+    font-family: var(--mono); font-size: 0.78rem; letter-spacing:0.04em;
+    background: var(--coral); color: #1B1024;
+    padding: 10px 20px; border-radius: 999px; font-weight:600;
+    border:none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .nav-cta:hover{ transform: translateY(-1px); box-shadow: 0 6px 20px rgba(239,68,68,0.4); }
+  .nav-toggle{ display:none; background:none; border:none; color:var(--text-primary); font-size:1.4rem; }
+
+  @media (max-width: 760px){
+    .nav-links{ display:none; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 90px 0 60px;
+    display:flex; justify-content:flex-start;
+  }
+  .hero-card{
+    max-width: 680px;
+    padding: 52px 48px;
+  }
+  .hero-card h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.06;
+    margin: 18px 0 20px;
+  }
+  .hero-card h1 em{
+    font-style: normal;
+    background: linear-gradient(100deg, var(--sun-core), var(--coral));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero-card p{
+    color: var(--text-muted);
+    font-size: 1.08rem;
+    max-width: 520px;
+    margin-bottom: 34px;
+  }
+  .hero-stats{
+    display:flex; gap: 36px; flex-wrap:wrap;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 26px;
+  }
+  .hero-stats div strong{
+    display:block; font-family: var(--display); font-size: 1.6rem; font-weight:700;
+  }
+  .hero-stats div span{
+    font-family: var(--mono); font-size: 0.72rem; color: var(--text-faint);
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  /* ---------- Story ---------- */
+  section{ padding: 90px 0; }
+  .story-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items:center;
+    margin-top: 36px;
+  }
+  .story-text h2{ font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 16px 0 22px; line-height:1.15; }
+  .story-text p{ color: var(--text-muted); margin-bottom: 16px; font-size: 1.02rem; }
+  .story-visual{
+    padding: 30px;
+    aspect-ratio: 1 / 1;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .story-visual svg{ width:100%; height:100%; }
+
+  /* ---------- Values ---------- */
+  .values-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;
+  }
+  .value-card{
+    padding: 32px 28px;
+  }
+  .value-card .num{
+    font-family: var(--mono); font-size: 0.75rem; color: var(--teal); margin-bottom: 18px; display:block;
+  }
+  .value-card h3{ font-size: 1.2rem; margin-bottom: 10px; }
+  .value-card p{ color: var(--text-muted); font-size: 0.95rem; }
+
+  @media (max-width: 860px){
+    .story-grid{ grid-template-columns: 1fr; }
+    .story-visual{ order:-1; max-width: 320px; margin: 0 auto; }
+    .values-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Achievements Carousel ---------- */
+  .ach-header{ display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; }
+  .ach-header h2{ font-size: clamp(1.8rem, 3vw, 2.4rem); margin-top:16px; }
+  .ach-header p{ color: var(--text-muted); max-width: 360px; }
+
+  .carousel{
+    margin-top: 46px;
+    display:flex; align-items:center; gap: 18px;
+  }
+  .car-viewport{
+    overflow: hidden;
+    border-radius: var(--radius);
+    flex: 1;
+  }
+  .car-track{
+    display:flex;
+    transition: transform 0.55s cubic-bezier(.65,.05,.36,1);
+  }
+  .car-slide{
+    min-width: 100%;
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+  .slide-visual{
+    padding: 44px;
+    display:flex; align-items:center; justify-content:center;
+    border-right: 1px solid var(--glass-border);
+    background: var(--glass-fill-strong);
+  }
+  .slide-visual svg{ width: 100%; max-width: 220px; height:auto; }
+  .slide-details{
+    padding: 44px 48px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .slide-details .stat{
+    font-family: var(--display); font-weight:700;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+    background: linear-gradient(100deg, var(--sun-core), var(--coral));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    margin-bottom: 6px;
+  }
+  .slide-details h3{ font-size: 1.15rem; margin-bottom: 14px; color: var(--text-primary); }
+  .slide-details p{ color: var(--text-muted); font-size: 0.98rem; max-width: 440px; }
+
+  .car-btn{
+    width: 48px; height:48px; border-radius:50%; flex-shrink:0;
+    background: var(--glass-fill); border:1px solid var(--glass-border);
+    color: var(--text-primary); font-size: 1.3rem;
+    display:flex; align-items:center; justify-content:center;
+    transition: background 0.2s ease, transform 0.15s ease;
+    backdrop-filter: blur(12px);
+  }
+  .car-btn:hover{ background: var(--glass-fill-strong); transform: scale(1.05); }
+
+  .dots{ display:flex; justify-content:center; gap: 10px; margin-top: 28px; }
+  .dot{
+    width: 8px; height:8px; border-radius:50%;
+    background: var(--glass-border); border:none; padding:0;
+    transition: background 0.2s ease, width 0.2s ease;
+  }
+  .dot.active{ background: var(--sun-core); width: 26px; border-radius: 6px; }
+
+  @media (max-width: 760px){
+    .car-slide{ grid-template-columns: 1fr; }
+    .slide-visual{ border-right:none; border-bottom:1px solid var(--glass-border); padding: 32px; }
+    .slide-visual svg{ max-width: 150px; }
+    .slide-details{ padding: 32px; }
+    .carousel{ gap: 10px; }
+    .car-btn{ width:40px; height:40px; }
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-banner{
+    padding: 56px 48px;
+    display:flex; align-items:center; justify-content:space-between; gap: 24px; flex-wrap:wrap;
+  }
+  .cta-banner h2{ font-size: clamp(1.6rem, 3vw, 2.1rem); max-width: 480px; line-height:1.2; }
+  .cta-btn{
+    font-family: var(--mono); font-weight:600; font-size:0.85rem; letter-spacing:0.03em;
+    background: linear-gradient(100deg, var(--sun-core), var(--coral));
+    color: #1B1024; padding: 16px 30px; border-radius: 999px; border:none;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta-btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px rgba(239,68,68,0.35); }
+
+  /* ---------- Footer ---------- */
+  footer{ padding: 50px 0 60px; }
+  .foot-inner{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 28px;
+    color: var(--text-faint); font-size: 0.85rem;
+  }
+  .foot-links{ display:flex; gap: 24px; }
+  .foot-links a:hover{ color: var(--text-muted); }
+
+  section .wrap > .eyebrow{ margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="sky"></div>
+<div class="sun-orb" id="sunOrb"></div>
+
+<header>
+  <div class="nav-inner">
+    <nav class="glass">
+      <div class="logo">
+        <span class="logo-mark"></span>
+        Heliast Solar
+      </div>
+      <div class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#values">Approach</a>
+        <a href="#achievements">Milestones</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-cta">Get a Quote</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-card glass">
+        <span class="eyebrow">About Heliast</span>
+        <h1>Turning sunlight<br>into <em>certainty.</em></h1>
+        <p>We design, build, and stand behind rooftop solar systems — with our own crews, not subcontractors, from the first site visit to the last panel bolted down.</p>
+        <div class="hero-stats">
+          <div><strong>50,000+</strong><span>Homes Powered</span></div>
+          <div><strong>1.2 GW</strong><span>Installed Capacity</span></div>
+          <div><strong>15 yrs</strong><span>In the Field</span></div>
+          <div><strong>14</strong><span>States Served</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="wrap">
+      <span class="eyebrow">Our Story</span>
+      <div class="story-grid">
+        <div class="story-text">
+          <h2>Started in a two-car garage, still run by the people who opened it.</h2>
+          <p>Heliast began in 2011 when two electricians got tired of installing other companies' systems and watching corners get cut. They bought one used inverter, borrowed a pickup truck, and wired their first rooftop themselves.</p>
+          <p>That same hands-on standard still shapes how we work. Every Heliast crew member is a direct employee, certified in-house, on a system we designed ourselves — not a subcontractor working off someone else's blueprint.</p>
+          <p>Fifteen years later, we've kept the part that mattered: showing up, doing the wiring right, and answering the phone after the panels are on the roof.</p>
+        </div>
+        <div class="story-visual glass">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="roofGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#10B981"/>
+                <stop offset="100%" stop-color="#EF4444"/>
+              </linearGradient>
+            </defs>
+            <circle cx="120" cy="70" r="34" fill="url(#roofGrad)" opacity="0.9"/>
+            <path d="M20 190 L120 110 L220 190 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(247,245,240,0.4)" stroke-width="2"/>
+            <g stroke="rgba(247,245,240,0.55)" stroke-width="2">
+              <line x1="55" y1="165" x2="90" y2="140"/>
+              <line x1="90" y1="180" x2="125" y2="150"/>
+              <line x1="125" y1="192" x2="160" y2="158"/>
+              <line x1="160" y1="192" x2="188" y2="168"/>
+            </g>
+            <rect x="30" y="190" width="180" height="14" rx="3" fill="rgba(255,255,255,0.1)" stroke="rgba(247,245,240,0.3)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section id="values">
+    <div class="wrap">
+      <span class="eyebrow">How We Work</span>
+      <h2 style="margin-top:16px; font-size:clamp(1.8rem,3vw,2.4rem); max-width:600px;">Three habits we haven't broken since the garage.</h2>
+      <div class="values-grid">
+        <div class="value-card glass">
+          <span class="num">In-house</span>
+          <h3>Our own crews, always</h3>
+          <p>No subcontractors on the roof. The people who design your system are the people who install it.</p>
+        </div>
+        <div class="value-card glass">
+          <span class="num">Transparent</span>
+          <h3>One quote, no surprises</h3>
+          <p>Production estimates are modeled against your actual roof and shading — not a neighborhood average.</p>
+        </div>
+        <div class="value-card glass">
+          <span class="num">Accountable</span>
+          <h3>25-year workmanship warranty</h3>
+          <p>If something we installed fails, we come back and fix it. That promise outlasts most mortgages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS CAROUSEL -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="ach-header">
+        <div>
+          <span class="eyebrow">Milestones</span>
+          <h2>Fifteen years, measured in rooftops.</h2>
+        </div>
+        <p>A few numbers from the road — swipe through to see where the last decade and a half went.</p>
+      </div>
+
+      <div class="carousel">
+        <button class="car-btn" id="prevBtn" aria-label="Previous achievement">&#8249;</button>
+        <div class="car-viewport">
+          <div class="car-track" id="carTrack">
+
+            <!-- Slide 1 -->
+            <div class="car-slide">
+              <div class="slide-visual glass">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <rect x="20" y="60" width="160" height="34" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(247,245,240,0.4)" stroke-width="1.5"/>
+                  <rect x="20" y="100" width="160" height="34" rx="4" fill="rgba(255,255,255,0.08)" stroke="rgba(247,245,240,0.4)" stroke-width="1.5"/>
+                  <line x1="60" y1="60" x2="60" y2="94" stroke="rgba(247,245,240,0.3)"/>
+                  <line x1="100" y1="60" x2="100" y2="94" stroke="rgba(247,245,240,0.3)"/>
+                  <line x1="140" y1="60" x2="140" y2="94" stroke="rgba(247,245,240,0.3)"/>
+                  <line x1="60" y1="100" x2="60" y2="134" stroke="rgba(247,245,240,0.3)"/>
+                  <line x1="100" y1="100" x2="100" y2="134" stroke="rgba(247,245,240,0.3)"/>
+                  <line x1="140" y1="100" x2="140" y2="134" stroke="rgba(247,245,240,0.3)"/>
+                  <circle cx="100" cy="35" r="18" fill="url(#roofGrad)"/>
+                </svg>
+              </div>
+              <div class="slide-details">
+                <span class="stat">50,000+</span>
+                <h3>Homes powered</h3>
+                <p>Rooftop systems installed across 14 states, from Texas ranch houses to Colorado cabins, each one designed for its own roof and climate.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="car-slide">
+              <div class="slide-visual glass">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <path d="M100 30 L118 75 L166 75 L128 102 L142 148 L100 120 L58 148 L72 102 L34 75 L82 75 Z" fill="url(#roofGrad)" opacity="0.9"/>
+                  <rect x="80" y="150" width="40" height="16" rx="2" fill="rgba(255,255,255,0.15)"/>
+                </svg>
+              </div>
+              <div class="slide-details">
+                <span class="stat">Top 5</span>
+                <h3>Solar Power World, 2025</h3>
+                <p>Ranked among the top five residential solar installers nationwide, based on install volume and customer satisfaction scores.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="car-slide">
+              <div class="slide-visual glass">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(247,245,240,0.35)" stroke-width="1.5"/>
+                  <ellipse cx="100" cy="100" rx="60" ry="24" fill="none" stroke="rgba(247,245,240,0.25)" stroke-width="1.5"/>
+                  <ellipse cx="100" cy="100" rx="24" ry="60" fill="none" stroke="rgba(247,245,240,0.25)" stroke-width="1.5"/>
+                  <circle cx="100" cy="100" r="14" fill="url(#roofGrad)"/>
+                </svg>
+              </div>
+              <div class="slide-details">
+                <span class="stat">1.2 GW</span>
+                <h3>Total capacity installed</h3>
+                <p>Enough clean generating capacity, spread across rooftops rather than one site, to stand in for roughly three coal-fired plants.</p>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="car-slide">
+              <div class="slide-visual glass">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <path d="M100 40 C70 70 60 100 100 140 C140 100 130 70 100 40 Z" fill="url(#roofGrad)" opacity="0.85"/>
+                  <line x1="100" y1="140" x2="100" y2="165" stroke="rgba(247,245,240,0.5)" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="slide-details">
+                <span class="stat">2.3M trees</span>
+                <h3>Carbon offset, per year</h3>
+                <p>Systems we've installed offset an estimated 410,000 tons of CO2 annually — roughly equivalent to planting 2.3 million trees.</p>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="car-slide">
+              <div class="slide-visual glass">
+                <svg viewBox="0 0 200 200" aria-hidden="true">
+                  <rect x="70" y="50" width="12" height="90" rx="3" fill="rgba(247,245,240,0.5)"/>
+                  <rect x="118" y="50" width="12" height="90" rx="3" fill="rgba(247,245,240,0.5)" transform="rotate(28 124 95)"/>
+                  <circle cx="76" cy="45" r="14" fill="url(#roofGrad)"/>
+                  <circle cx="130" cy="52" r="14" fill="url(#roofGrad)" opacity="0.8"/>
+                </svg>
+              </div>
+              <div class="slide-details">
+                <span class="stat">15 years</span>
+                <h3>Same crew-based model</h3>
+                <p>Every install still goes through our own certified electricians — no subcontractors, from the first system in 2011 to today's.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <button class="car-btn" id="nextBtn" aria-label="Next achievement">&#8250;</button>
+      </div>
+
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta-banner glass">
+        <h2>Thinking about solar? Let's look at your roof.</h2>
+        <button class="cta-btn">Book a Site Visit</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <span>&copy; 2026 Heliast Solar. Licensed electrical contractor.</span>
+      <div class="foot-links">
+        <a href="#story">Our Story</a>
+        <a href="#values">Approach</a>
+        <a href="#achievements">Milestones</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---- Scroll-driven sun arc (dawn -> noon -> dusk) ----
+  const skyEl = document.querySelector('.sky');
+  const sunEl = document.getElementById('sunOrb');
+
+  const stops = [
+    { p: 0,   top: [10,34,51],  bottom: [13,59,52],   sunCore:'#10B981', sunGlow:'#2563EB' },
+    { p: 0.5, top: [14,58,102], bottom: [20,94,150],  sunCore:'#34D399', sunGlow:'#3B82F6' },
+    { p: 1,   top: [59,22,32],  bottom: [89,28,36],   sunCore:'#F87171', sunGlow:'#EF4444' }
+  ];
+
+  function lerp(a,b,t){ return a + (b-a)*t; }
+  function mix(c1,c2,t){ return [lerp(c1[0],c2[0],t), lerp(c1[1],c2[1],t), lerp(c1[2],c2[2],t)]; }
+  function rgb(c){ return `rgb(${c[0]|0},${c[1]|0},${c[2]|0})`; }
+
+  function computeColors(progress){
+    let a = stops[0], b = stops[1];
+    if(progress > 0.5){ a = stops[1]; b = stops[2]; }
+    const local = a.p === 0 ? progress/0.5 : (progress-0.5)/0.5;
+    const top = mix(a.top, b.top, local);
+    const bottom = mix(a.bottom, b.bottom, local);
+    return { top: rgb(top), bottom: rgb(bottom) };
+  }
+
+  let ticking = false;
+  function updateSky(){
+    const scrollTop = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = max > 0 ? Math.min(Math.max(scrollTop / max, 0), 1) : 0;
+
+    const colors = computeColors(progress);
+    skyEl.style.background = `linear-gradient(180deg, ${colors.top} 0%, ${colors.bottom} 100%)`;
+
+    // Arc: sun rises from lower-left, peaks near top-center, sets lower-right
+    const x = 8 + progress * 84; // 8% -> 92%
+    const y = 82 - Math.sin(progress * Math.PI) * 62; // dips down at both ends, rises in middle
+    sunEl.style.setProperty('left', x + '%');
+    sunEl.style.setProperty('top', y + '%');
+
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if(!ticking){
+      requestAnimationFrame(updateSky);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  updateSky();
+
+  // ---- Achievements carousel ----
+  const track = document.getElementById('carTrack');
+  const slides = track.children.length;
+  const dotsWrap = document.getElementById('dots');
+  let index = 0;
+
+  for(let i=0;i<slides;i++){
+    const dot = document.createElement('button');
+    dot.className = 'dot' + (i===0 ? ' active':'');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i+1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  }
+  const dotEls = dotsWrap.querySelectorAll('.dot');
+
+  function render(){
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dotEls.forEach((d,i) => d.classList.toggle('active', i===index));
+  }
+  function goTo(i){ index = (i + slides) % slides; render(); resetAutoplay(); }
+
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(index-1));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(index+1));
+
+  let autoplay = setInterval(() => goTo(index+1), 6000);
+  function resetAutoplay(){ clearInterval(autoplay); autoplay = setInterval(() => goTo(index+1), 6000); }
+
+  const carousel = document.querySelector('.carousel');
+  carousel.addEventListener('mouseenter', () => clearInterval(autoplay));
+  carousel.addEventListener('mouseleave', resetAutoplay);
+
+  render();
+</script>
+
+</body>
+</html>

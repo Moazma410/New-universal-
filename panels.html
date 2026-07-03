@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Universal Solar and Traders - Premium Products</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       body {
+    font-family: 'Outfit', sans-serif;
+    background:
+        linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+        url("logoo.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 600px; /* Makes the logo smaller */
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+        /* Hide scrollbars but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* GPU-Accelerated Floating Animations */
+        .card-odd {
+            animation: floatUp 1s ease-in-out infinite alternate;
+        }
+
+        .card-even {
+            animation: floatDown 1s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(15px);
+            }
+            100% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes floatDown {
+            0% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(15px);
+            }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 640px) {
+            .product-card {
+                width: 280px !important;
+                height: 420px !important;
+                padding: 24px !important;
+            }
+            
+            .card-odd {
+                animation: floatUpMobile 5s ease-in-out infinite alternate;
+            }
+
+            .card-even {
+                animation: floatDownMobile 5s ease-in-out infinite alternate;
+            }
+        }
+
+        @keyframes floatUpMobile {
+            0% {
+                transform: translateY(8px);
+            }
+            100% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes floatDownMobile {
+            0% {
+                transform: translateY(-8px);
+            }
+            100% {
+                transform: translateY(8px);
+            }
+        }
+
+        /* Support classes from original code just in case */
+        .panol {
+            position: absolute;
+            width: 120px;
+            animation: zigzag 12s linear infinite;
+        }
+
+        .desktop-animation {
+            display: block;
+        }
+
+        .mobile-animation {
+            display: none;
+        }
+
+        @media (max-width: 1023px) {
+            .desktop-animation {
+                display: none;
+            }
+            .mobile-animation {
+                display: block;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+body.watermark {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.watermark::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background: url("logo.png") no-repeat center center;
+    background-size: 45%;   /* Adjust logo size */
+
+    opacity: 0.08;          /* Watermark effect */
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+    </style>
+</head>
+
+
+<body class="watermark overflow-x-hidden py-8 px-4 flex flex-col justify-between">
+  
+    <!-- Header Section -->
+   <header class="bg-orange-500 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+  
+
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+
+    <h1 class="text-lg sm:text-xl md:text-2xl font-bold text-center sm:text-left">
+      Inverex Solar Batteries
+    </h1>
+     
+    <a href="All pro.html"
+       class="bg-white text-orange-600 px-5 py-2 rounded-full text-sm sm:text-base font-semibold
+              hover:bg-gray-100 transition">
+      Back Home
+
+    </a>
+ 
+  </div>
+
+</header>
+
+    <!-- Product Grid Container -->
+    <main class="w-full flex-grow flex items-center justify-center py-4 sm:py-8">
+        <div class="w-full max-w-7xl sm:overflow-x-auto no-scrollbar py-8 sm:py-12 px-4 sm:px-6">
+            <div class="flex flex-col sm:flex-row gap-8 items-center justify-center sm:min-w-max px-4" id="main-div">
+                
+                <!-- Card 1 -->
+                <div class="product-card card-odd w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Mustang Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">MUSTANG</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            585 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card card-even w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Mustang Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">MUSTANG</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            610 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card card-odd w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Mustang Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">MUSTANG</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            620 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card card-even w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Mustang Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">MUSTANG</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            720 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card card-odd w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Jollywood Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">JOLLYWOOD</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            595 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card card-even w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Jollywood Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">JOLLYWOOD</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            620 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-card card-odd w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Jollywood Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">JOLLYWOOD</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            625 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-card card-even w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Jollywood Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">JOLLYWOOD</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">BI-FACIAL</p>
+                        <div class="mt-3 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            630 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="product-card card-odd w-[230px] h-[450px] rounded-2xl bg-white/70 backdrop-blur-md border border-slate-200/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col p-6 items-center justify-between group">
+                    <div class="w-full text-center">
+                        <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100/50">
+                            Inverex
+                        </span>
+                    </div>
+                    <div class="h-[180px] w-full flex items-center justify-center my-3 group-hover:scale-105 transition-transform duration-300">
+                        <img src="ppp.jpeg" class="mg max-h-full max-w-full object-contain filter drop-shadow-md" alt="Inverex Jollywood Solar Panel" />
+                    </div>
+                    <div class="w-full text-center">
+                        <h3 class="text-base font-bold text-slate-800">JOLLYWOOD</h3>
+                        <p class="text-[10px] font-semibold text-slate-500 mt-0.5 tracking-wider">MONO-FACIAL</p>
+                        <p class="text-[9px] font-bold text-slate-400 -mt-0.5 tracking-wider">HAIL-FRAME</p>
+                        <div class="mt-2 text-sm font-extrabold text-emerald-600 bg-emerald-50/50 py-1.5 rounded-xl border border-emerald-100/30">
+                            620 WATT
+                        </div>
+                        <div><a href="https://wa.me/923103293033?text=Hi%20I%20want%20Power%20Wall%202.6%20quote"
+       target="_blank"
+       class="mt-3 inline-block text-xs px-3 py-1.5 bg-emerald-500 hover:bg-emerald-600 text-white rounded transition">
+      Get Quote
+    </a>
+</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4 w-full">
+        <p class="text-xs text-slate-500 font-medium">
+            &copy; 2026 New Universal Solar and Traders. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
